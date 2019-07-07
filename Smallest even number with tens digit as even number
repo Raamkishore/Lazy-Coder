@@ -1,0 +1,31 @@
+a = input()
+b = input()
+a = list(a)
+b = list(b)
+for i in range(len(b)):
+    a.append(b[i])
+
+a.sort()
+for i in range(len(a)):
+    if(int(a[i]) != 0):
+        p = a.pop(i)
+        break
+a.insert(0,str(p))
+if(int(a[len(a)-1]) % 2 != 0):
+    for i in range(len(a)-2,-1,-1):
+        if(int(a[i]) % 2 == 0):
+            g = a.pop(i)
+            a.insert(len(a),g)
+            break
+if((int(a[len(a)-2]) % 2) != 0):
+    for i in range(len(a)-3,-1,-1):
+        if(int(a[i]) % 2 == 0):
+            g = a.pop(i)
+            a.insert(len(a)-1,g)
+            break
+if(int(a[len(a)-1] and int(a[len(a)-2]) % 2 == 0)):
+    c = ''.join(a)
+    c = int(c)
+    print(c)
+else:
+    print("-1")
