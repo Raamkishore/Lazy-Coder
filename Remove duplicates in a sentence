@@ -1,0 +1,15 @@
+n = input()
+m = []
+p = []
+for i in n:
+    m.append(i)
+
+for i in m:
+    if i not in p:
+        p.append(i)
+    elif ' ' in i:
+        p.append(i)
+print(n)
+print()
+for i in range(len(p)):
+    print(p[i], end = "")
