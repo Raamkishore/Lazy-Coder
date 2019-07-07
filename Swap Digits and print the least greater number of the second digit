@@ -1,0 +1,38 @@
+a,b = input().split()
+f = int(b)
+my_nums = []
+def permute(nums):
+  result_perms = [[]]
+  for n in nums:
+    new_perms = []
+    for perm in result_perms:
+      for i in range(len(perm)+1):
+        new_perms.append(perm[:i] + [n] + perm[i:])
+        result_perms = new_perms
+  return result_perms
+
+for i in a:
+    my_nums.append(int(i))
+c = []
+p = []
+q = []
+b = permute(my_nums)
+for i in range(len(b)):
+    for j in range(len(my_nums)):
+        c.append(str(b[i][j]))
+    d = ''.join(c)
+    p.append(d)
+    c.clear()
+    
+for i in range(len(p)):
+    if(int(p[i]) > f):
+        q.append(int(p[i]))
+        
+if(q == []):
+    print(a,f)
+    print()
+    print("-1")
+else:
+    print(a,f)
+    print()
+    print(min(q))
