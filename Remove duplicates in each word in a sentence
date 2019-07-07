@@ -1,0 +1,11 @@
+n = input().split()                               #each word is an element in list
+m = []
+        
+for i in range(len(n)):                           #each word in list
+    for j in n[i]:                                #checks each letter in each word
+        if j not in m:                            #checks for the letter
+            m.append(j)                           #appends for one word
+    for k in range(len(m)):
+        print(m[k], end = "")                     #prints it
+    m.clear()                                     #clears it for the next word
+    print(end = " ")                              #space for each word
