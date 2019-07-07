@@ -1,0 +1,41 @@
+import string
+n = input().split()
+b = len(n)
+e = []
+g = []
+h = []
+p = []
+k = 0
+for i in range(b):
+    if(len(n[i]) >= 5):
+        c = n[i]
+        break
+        
+d = ''.join(n)
+print(d)
+for j in range(len(d)):
+    if(k > (len(c) - 1)):
+        k = 0
+    e.append(c[k])
+    k+=1
+f = ''.join(e)
+print(f)
+
+a = dict(zip(string.ascii_lowercase, range(1,27)))
+
+for w in d:
+    g.append(a[w])
+    
+for x in f:
+    h.append(a[x])
+    
+for i in range(len(d)):
+    p.append(g[i] + h[i])
+    if(p[i] > 26):
+        p[i] = p[i] - 26
+    
+ 
+print()        
+
+for i in range(len(p)):
+    print(list(a.keys())[list(a.values()).index(p[i])], end = "")
